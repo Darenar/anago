@@ -21,6 +21,7 @@ def load_model(weights_file, params_file):
     with open(params_file) as f:
         model = model_from_json(f.read(), custom_objects={'CRF': CRF})
         model.load_weights(weights_file)
+        model._make_predict_function()
 
     return model
 
