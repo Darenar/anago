@@ -35,6 +35,7 @@ class BaseModel(object):
         self = cls(**params)
         self.build()
         self.load_weights(weights_file)
+        self._make_predict_function()
 
         return self
 
